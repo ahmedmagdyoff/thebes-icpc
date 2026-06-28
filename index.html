@@ -1,272 +1,316 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thebes ICPC Community | Competitive Programming</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thebes ICPC Community | Competitive Programming</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <script src="pre.js"></script>
-  <!-- Header -->
-  <header>
-    <div class="container nav-container">
-      <div class="logo">
-        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.2rem">
-          <img src="assets/logo.png" alt="Thebes ICPC Logo" style="width: 100%; height: 100%; object-fit: contain" />
+  <body>
+    <script src="js/pre.js"></script>
+    <!-- Header -->
+    <header>
+      <div class="container nav-container">
+        <div class="logo">
+          <div
+            class="logo-icon"
+            style="width: 40px; height: 40px; font-size: 1.2rem"
+          >
+            <img
+              src="assets/logo.png"
+              alt="Thebes ICPC Logo"
+              style="width: 100%; height: 100%; object-fit: contain"
+            />
+          </div>
+          <div class="logo-text">
+            <h1>Thebes <span>ICPC</span><span> Community</span></h1>
+          </div>
         </div>
-        <div class="logo-text">
-          <h1>Thebes <span>ICPC</span><span> Community</span></h1>
-        </div>
-      </div>
 
-      <nav>
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav-links" id="navLinks">
-          <a href="#home" class="active">Home</a>
-          <a href="#level0">Level 0</a>
-          <a href="#level1">Level 1</a>
-          <a href="#top-performers">Top Performers</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Practice Sheets Modal -->
-  <div class="modal" id="sheetsModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3><i class="fas fa-file-code"></i> Practice Sheets Repository</h3>
-        <button class="modal-close" id="modalClose">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-buttons">
-          <button class="sheet-btn level0-btn" id="level0SheetsBtn">
-            <div style="display: flex; align-items: center; gap: 0.8rem">
-              <i class="fas fa-layer-group"></i>
-              <span>Level 0 Sheets</span>
-            </div>
-            <i class="fas fa-external-link-alt arrow"></i>
+        <nav>
+          <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
           </button>
+          <div class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#level0">Level 0</a>
+            <a href="#level1">Level 1</a>
+            <a href="#top-performers">Top Performers</a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-          <button class="sheet-btn level1-btn" id="level1SheetsBtn">
-            <div style="display: flex; align-items: center; gap: 0.8rem">
-              <i class="fas fa-rocket"></i>
-              <span>Level 1 Sheets</span>
-            </div>
-            <i class="fas fa-external-link-alt arrow"></i>
+    <!-- Practice Sheets Modal -->
+    <div class="modal" id="sheetsModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3><i class="fas fa-file-code"></i> Practice Sheets Repository</h3>
+          <button class="modal-close" id="modalClose">
+            <i class="fas fa-times"></i>
           </button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <p>Click on a level to open its practice sheets</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="container main-layout">
-    <!-- Content Section -->
-    <main class="content-section">
-      <!-- Hero Section -->
-      <section class="hero" id="home">
-        <h2>Master Competitive Programming</h2>
-        <p>
-          Join the Thebes ICPC community to enhance your problem-solving
-          skills, learn advanced algorithms, and prepare for ICPC contests
-          with structured materials and mentorship.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#level0" class="btn btn-primary">
-            <i class="fas fa-layer-group"></i>
-            Level 0: Foundations
-          </a>
-          <a href="#level1" class="btn btn-primary">
-            <i class="fas fa-rocket"></i>
-            Level 1: Advanced Topics
-          </a>
-          <a href="#top-performers" class="btn btn-secondary" id="viewTopPerformersBtn">
-            <i class="fas fa-trophy"></i>
-            View Top Performers
-          </a>
-        </div>
-      </section>
-
-      <!-- Level 0 Section -->
-      <section id="level0">
-        <div class="section-header" id="level0-header">
-          <div>
-            <h2>
-              <i class="fas fa-layer-group"></i> Level 0 - Foundation Topics
-            </h2>
-            <div class="level-indicator level0-indicator">
-              Beginner Friendly
-            </div>
-          </div>
-          <i class="fas fa-chevron-down collapse-icon"></i>
-        </div>
-
-        <div class="weeks-container" id="level0-content">
-          <div class="weeks-grid">
-            <script>
-              topics("0");
-            </script>
-          </div>
-
-          <a href="#top-performers" class="btn btn-secondary top-performers-btn">
-            <i class="fas fa-trophy"></i>
-            View Level 0 Top Performers
-          </a>
-        </div>
-      </section>
-
-      <!-- Level 1 Section -->
-      <section id="level1">
-        <div class="section-header" id="level1-header">
-          <div>
-            <h2><i class="fas fa-rocket"></i> Level 1 - Advanced Topics</h2>
-            <div class="level-indicator level1-indicator">
-              Intermediate/Advanced
-            </div>
-          </div>
-          <i class="fas fa-chevron-down collapse-icon"></i>
-        </div>
-
-        <div class="weeks-container" id="level1-content">
-          <div class="weeks-grid">
-            <script>
-              topics("1");
-            </script>
-          </div>
-
-          <a href="#top-performers" class="btn btn-secondary top-performers-btn">
-            <i class="fas fa-trophy"></i>
-            View Level 1 Top Performers
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-card" id="top-performers">
-        <div class="sidebar-header">
-          <h3><i class="fas fa-trophy"></i> Top Performers</h3>
-          <div class="slide-controls">
-            <button class="slide-btn" id="prevSlide">
-              <i class="fas fa-chevron-left"></i>
+        <div class="modal-body">
+          <div class="modal-buttons">
+            <button class="sheet-btn level0-btn" id="level0SheetsBtn">
+              <div style="display: flex; align-items: center; gap: 0.8rem">
+                <i class="fas fa-layer-group"></i>
+                <span>Level 0 Sheets</span>
+              </div>
+              <i class="fas fa-external-link-alt arrow"></i>
             </button>
-            <button class="slide-btn" id="nextSlide">
-              <i class="fas fa-chevron-right"></i>
+
+            <button class="sheet-btn level1-btn" id="level1SheetsBtn">
+              <div style="display: flex; align-items: center; gap: 0.8rem">
+                <i class="fas fa-rocket"></i>
+                <span>Level 1 Sheets</span>
+              </div>
+              <i class="fas fa-external-link-alt arrow"></i>
             </button>
           </div>
         </div>
-
-        <div class="top-performers" id="topPerformersContainer">
-          <!-- Slide 1: Level 0 Top 10 -->
-          <div class="slide level0-slide active" id="slide1">
-            <h4 class="slide-title">Level 0 - Top 10 Performers</h4>
-            <div class="performer-list">
-              <script>
-                performers("0");
-              </script>
-            </div>
-          </div>
-
-          <!-- Slide 2: Level 1 Top 3 -->
-          <div class="slide level1-slide" id="slide2">
-            <h4 class="slide-title">Level 1 - Top 3 Performers</h4>
-            <div class="performer-list">
-              <script>
-                performers("1");
-              </script>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 1.5rem">
-          <button class="btn btn-secondary" id="pauseSlideBtn" style="padding: 0.5rem 1rem; font-size: 0.9rem">
-            <i class="fas fa-pause"></i> Pause Auto-Slide
-          </button>
+        <div class="modal-footer">
+          <p>Click on a level to open its practice sheets</p>
         </div>
       </div>
+    </div>
 
-      <!-- Quick Links Card -->
-      <div class="sidebar-card">
-        <div class="sidebar-header">
-          <h3><i class="fas fa-external-link-alt"></i> Quick Links</h3>
-        </div>
-        <div class="footer-links">
-          <a href="https://www.youtube.com/@icpc-thebes" target="_blank"><i class="fab fa-youtube"></i> YouTube
-            Channel</a>
-          <a href="#" id="practiceSheetsBtn"><i class="fas fa-file-code"></i> Practice Sheets Repository</a>
-          <a href="https://chat.whatsapp.com/K07D1q4dUjuHZh5fmkBCyW" target="_blank"><i class="fas fa-users"></i>
-            Community WhatsApp</a>
-        </div>
-      </div>
-    </aside>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Thebes ICPC</h3>
+    <!-- Main Content -->
+    <div class="container main-layout">
+      <!-- Content Section -->
+      <main class="content-section">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+          <h2>Master Competitive Programming</h2>
           <p>
-            Our mission is to build a strong competitive programming community
-            at Thebes Academy, preparing students for ICPC and other
-            programming competitions.
+            Join the Thebes ICPC community to enhance your problem-solving
+            skills, learn advanced algorithms, and prepare for ICPC contests
+            with structured materials and mentorship.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#level0" class="btn btn-primary">
+              <i class="fas fa-layer-group"></i>
+              Level 0: Foundations
+            </a>
+            <a href="#level1" class="btn btn-primary">
+              <i class="fas fa-rocket"></i>
+              Level 1: Advanced Topics
+            </a>
+            <a
+              href="#top-performers"
+              class="btn btn-secondary"
+              id="viewTopPerformersBtn"
+            >
+              <i class="fas fa-trophy"></i>
+              View Top Performers
+            </a>
+          </div>
+        </section>
+
+        <!-- Level 0 Section -->
+        <section id="level0">
+          <div class="section-header" id="level0-header">
+            <div>
+              <h2>
+                <i class="fas fa-layer-group"></i> Level 0 - Foundation Topics
+              </h2>
+              <div class="level-indicator level0-indicator">
+                Beginner Friendly
+              </div>
+            </div>
+            <i class="fas fa-chevron-down collapse-icon"></i>
+          </div>
+
+          <div class="weeks-container" id="level0-content">
+            <div class="weeks-grid">
+              <script>
+                topics("0");
+              </script>
+            </div>
+
+            <a
+              href="#top-performers"
+              class="btn btn-secondary top-performers-btn"
+            >
+              <i class="fas fa-trophy"></i>
+              View Level 0 Top Performers
+            </a>
+          </div>
+        </section>
+
+        <!-- Level 1 Section -->
+        <section id="level1">
+          <div class="section-header" id="level1-header">
+            <div>
+              <h2><i class="fas fa-rocket"></i> Level 1 - Advanced Topics</h2>
+              <div class="level-indicator level1-indicator">
+                Intermediate/Advanced
+              </div>
+            </div>
+            <i class="fas fa-chevron-down collapse-icon"></i>
+          </div>
+
+          <div class="weeks-container" id="level1-content">
+            <div class="weeks-grid">
+              <script>
+                topics("1");
+              </script>
+            </div>
+
+            <a
+              href="#top-performers"
+              class="btn btn-secondary top-performers-btn"
+            >
+              <i class="fas fa-trophy"></i>
+              View Level 1 Top Performers
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-card" id="top-performers">
+          <div class="sidebar-header">
+            <h3><i class="fas fa-trophy"></i> Top Performers</h3>
+            <div class="slide-controls">
+              <button class="slide-btn" id="prevSlide">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slide-btn" id="nextSlide">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="top-performers" id="topPerformersContainer">
+            <!-- Slide 1: Level 0 Top 10 -->
+            <div class="slide level0-slide active" id="slide1">
+              <h4 class="slide-title">Level 0 - Top 10 Performers</h4>
+              <div class="performer-list">
+                <script>
+                  performers("0");
+                </script>
+              </div>
+            </div>
+
+            <!-- Slide 2: Level 1 Top 3 -->
+            <div class="slide level1-slide" id="slide2">
+              <h4 class="slide-title">Level 1 - Top 3 Performers</h4>
+              <div class="performer-list">
+                <script>
+                  performers("1");
+                </script>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 1.5rem">
+            <button
+              class="btn btn-secondary"
+              id="pauseSlideBtn"
+              style="padding: 0.5rem 1rem; font-size: 0.9rem"
+            >
+              <i class="fas fa-pause"></i> Pause Auto-Slide
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Links Card -->
+        <div class="sidebar-card">
+          <div class="sidebar-header">
+            <h3><i class="fas fa-external-link-alt"></i> Quick Links</h3>
+          </div>
+          <div class="footer-links">
+            <a href="https://www.youtube.com/@icpc-thebes" target="_blank"
+              ><i class="fab fa-youtube"></i> YouTube Channel</a
+            >
+            <a href="#" id="practiceSheetsBtn"
+              ><i class="fas fa-file-code"></i> Practice Sheets Repository</a
+            >
+            <a
+              href="https://chat.whatsapp.com/K07D1q4dUjuHZh5fmkBCyW"
+              target="_blank"
+              ><i class="fas fa-users"></i> Community WhatsApp</a
+            >
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Thebes ICPC</h3>
+            <p>
+              Our mission is to build a strong competitive programming community
+              at Thebes Academy, preparing students for ICPC and other
+              programming competitions.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Learning Paths</h3>
+            <div class="footer-links">
+              <a href="#level0"
+                ><i class="fas fa-layer-group"></i> Level 0 - Foundation</a
+              >
+              <a href="#level1"
+                ><i class="fas fa-rocket"></i> Level 1 - Advanced</a
+              >
+              <a href="#"
+                ><i class="fas fa-chart-line"></i> Progress Tracking</a
+              >
+              <a href="#" id="practiceSheetsBtnFooter"
+                ><i class="fas fa-trophy"></i> Practice Sheets</a
+              >
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h3>Connect With Us</h3>
+            <div class="footer-links">
+              <a href="https://www.facebook.com/thebescpc" target="_blank"
+                ><i class="fab fa-facebook"></i> Facebook Page</a
+              >
+              <a
+                href="https://chat.whatsapp.com/K07D1q4dUjuHZh5fmkBCyW"
+                target="_blank"
+                ><i class="fab fa-whatsapp"></i> Community WhatsApp</a
+              >
+              <a
+                href="https://www.linkedin.com/company/icpc-thebes/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i> LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>
+            &copy; 2025 Thebes ICPC Community. All rights reserved. | Designed
+            for competitive programmers
           </p>
         </div>
-
-        <div class="footer-section">
-          <h3>Learning Paths</h3>
-          <div class="footer-links">
-            <a href="#level0"><i class="fas fa-layer-group"></i> Level 0 - Foundation</a>
-            <a href="#level1"><i class="fas fa-rocket"></i> Level 1 - Advanced</a>
-            <a href="#"><i class="fas fa-chart-line"></i> Progress Tracking</a>
-            <a href="#" id="practiceSheetsBtnFooter"><i class="fas fa-trophy"></i> Practice Sheets</a>
-          </div>
-        </div>
-
-        <div class="footer-section">
-          <h3>Connect With Us</h3>
-          <div class="footer-links">
-            <a href="https://www.facebook.com/thebescpc" target="_blank"><i class="fab fa-facebook"></i> Facebook
-              Page</a>
-            <a href="https://chat.whatsapp.com/K07D1q4dUjuHZh5fmkBCyW" target="_blank"><i class="fab fa-whatsapp"></i>
-              Community WhatsApp</a>
-            <a href="https://www.linkedin.com/company/icpc-thebes/" target="_blank"><i class="fab fa-linkedin"></i>
-              LinkedIn</a>
-          </div>
-        </div>
       </div>
+    </footer>
 
-      <div class="copyright">
-        <p>
-          &copy; 2025 Thebes ICPC Community. All rights reserved. | Designed
-          for competitive programmers
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>
