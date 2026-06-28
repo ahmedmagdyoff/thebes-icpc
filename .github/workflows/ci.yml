@@ -21,8 +21,9 @@ jobs:
       - name: Verify Required Files
         run: |
           test -f index.html
-          test -f style.css
-          test -f script.js
+          test -f css/style.css
+          test -f js/script.js
+          test -f js/pre.js
 
       - name: Success
         run: echo "Project validation passed."
