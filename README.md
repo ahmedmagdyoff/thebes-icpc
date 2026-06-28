@@ -68,9 +68,9 @@ Run the website using any static web server, or simply open `index.html` in your
 ```text
 .
 ├── assets/
-│   ├── css/
-│   ├── images/
-│   └── js/
+├── css/
+├── data/
+├── js/
 ├── index.html
 └── README.md
 ```
